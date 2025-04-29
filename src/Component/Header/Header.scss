@@ -1,0 +1,121 @@
+@use "../../responsive.scss" as *;
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  padding: 30px 120px;
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+
+  @include md {
+    padding: 20px 60px;
+  }
+
+  @include sm {
+    padding: 16px 20px;
+  }
+
+  .logoContainer {
+    flex: 5;
+    display: flex;
+    justify-items: flex-start;
+
+    @include md {
+      img {
+        width: 6em;
+      }
+    }
+
+    @include sm {
+      img {
+        width: 5em;
+      }
+    }
+  }
+  .active {
+    display: none;
+    @include sm {
+      display: flex !important;
+      position: fixed;
+      z-index: 2;
+      gap: 0 30px;
+    }
+  }
+  nav {
+    flex: 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 40px;
+
+    @include md {
+      gap: 0 20px;
+    }
+
+    @include sm {
+      display: none;
+    }
+
+    button {
+      background-color: rgba(92, 214, 255, 1);
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      width: 10vw;
+
+      @include md {
+        font-size: 14px;
+        padding: 10px 20px;
+        width: 18vw;
+        font-weight: 600;
+        color: white;
+      }
+      @include sm {
+        font-size: 10px;
+        padding: 10px 20px;
+        width: 32vw;
+        font-weight: 600;
+        color: white;
+      }
+    }
+
+    .translateContainer {
+      display: flex;
+      align-items: center;
+      gap: 0 6px;
+
+      img {
+        width: 2em;
+        height: 1.9em;
+
+        @include sm {
+          width: 1em;
+          height: 1em;
+        }
+
+        @include md {
+          width: 1.4em;
+          height: 1.4em;
+        }
+      }
+
+      @include sm {
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .menuCont {
+    flex: 1;
+    display: none;
+    @include sm {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .menuIcon {
+      width: 22px;
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@import "../../responsive.scss";
+
+.invisible {
+  display: none;
+}
+
+.contactCont {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 103, 177, 1);
+  padding: 8% 14%;
+  color: white;
+  font-family: Manrope;
+  flex-direction: column;
+
+  @include lg {
+    padding: 8% 8%;
+  }
+
+  @include md {
+    gap: 10px 0;
+    padding: 8% 6%;
+  }
+
+  @include sm {
+    display: flex;
+    gap: 20px 0;
+    padding: 8% 6%;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 38px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    border-bottom: 1px solid white;
+    width: max-content;
+
+    @include md {
+      font-size: 24px;
+    }
+
+    @include sm {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 20px;
+    }
+  }
+
+  .enquire {
+    display: flex;
+    margin-top: 30px;
+
+    @include sm {
+      margin-top: 0;
+    }
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+
+    @include sm {
+      font-size: 16px;
+      line-height: 10px;
+    }
+  }
+  .Wrapper {
+    display: flex;
+    @include sm {
+      flex-direction: column-reverse;
+      gap: 20px 0;
+    }
+    .contactLCont {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30px 0;
+      font-family: Manrope;
+      margin-top: 1em;
+
+      @include sm {
+        gap: 20px 0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include sm {
+          flex-direction: row;
+        }
+
+        span {
+          @include md {
+            font-size: 16px;
+          }
+
+          @include sm {
+            font-size: 12px;
+          }
+        }
+
+        .title {
+          display: flex;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 16px;
+          letter-spacing: 0%;
+          vertical-align: middle;
+
+          @include md {
+            font-size: 18px;
+          }
+
+          @include sm {
+            font-weight: 500;
+            line-height: 5px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .contactRCont {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 40px 0;
+
+      @include sm {
+        gap: 20px 0;
+      }
+
+      textarea,
+      input {
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        padding: 12px 0;
+        color: white;
+
+        @include sm {
+          padding: 6px 0;
+        }
+      }
+
+      textarea {
+        display: flex;
+        max-lines: 100;
+        line-height: 20px;
+      }
+
+      button {
+        display: flex;
+        border: 1px solid white;
+        width: max-content;
+        padding: 14px 38px;
+        background: transparent;
+        color: white;
+        border-radius: 50px;
+
+        @include sm {
+          width: 80vw;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

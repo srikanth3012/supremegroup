@@ -1,0 +1,229 @@
+@use "../../responsive.scss" as *;
+
+.invisble {
+  display: none;
+}
+
+.contentCont {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  font-family: "Manrope", sans-serif;
+  padding: 4% 1%;
+  align-items: center;
+
+  @include sm {
+    height: 150vh;
+  }
+
+  .titleCont {
+    flex: 1;
+    display: flex;
+    color: white;
+    font-size: 24px;
+    justify-content: center;
+
+    @include md {
+      .titleText {
+        font-size: 24px;
+      }
+    }
+
+    @include sm {
+      .titleText {
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+
+    h1 {
+      width: 60%;
+      text-align: center;
+    }
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  .contentMCont {
+    flex: 10;
+    display: flex;
+    width: 100vw;
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 10%;
+      cursor: pointer;
+
+      .textCont {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        border-left: 1px solid gray;
+        padding: 30px 10px;
+
+        p {
+          width: 100%;
+        }
+
+        @include md {
+          h1 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+
+        @include sm {
+          border-left: none;
+          align-items: center;
+          color: white;
+          margin-top: -60px;
+
+          h1 {
+            font-size: 16px;
+          }
+          p {
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .active {
+        border-left: 2px solid white;
+        color: white;
+        padding: 30px 10px;
+
+        @include sm {
+          border-left: none;
+        }
+      }
+    }
+
+    .imgCont {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+
+      .imgTopCont {
+        flex: 8;
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        @include md {
+          flex: 5;
+          align-items: flex-end;
+        }
+
+        @include sm {
+          align-items: center;
+        }
+
+        video {
+          display: flex;
+          position: absolute;
+          width: 80%;
+        }
+      }
+
+      .imgBottomCont {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 0 20px;
+
+        @include md {
+          flex: 3;
+          margin-top: 40px;
+          justify-content: start;
+        }
+
+        @include sm {
+          gap: 0 10px;
+          justify-content: center;
+        }
+        .catItems {
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+          align-items: center;
+
+          img {
+            width: 50px;
+          }
+
+          span {
+            font-size: 12px;
+          }
+
+          @include sm {
+            img {
+              width: 40px;
+            }
+
+            span {
+              font-size: 8px;
+            }
+          }
+        }
+
+        .catItems:hover {
+          img {
+            filter: none;
+          }
+          span {
+            color: white;
+          }
+        }
+
+        .activeIcon {
+          img {
+            filter: none;
+          }
+          span {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .smallScreen {
+      display: none;
+
+      @include sm {
+        display: flex;
+      }
+    }
+
+    .bigScreen {
+      display: flex;
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Move animation keyframes outside */
+@keyframes moveToTop {
+  0% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 0%;
+    transform: translate(-50%, 0);
+  }
+}

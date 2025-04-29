@@ -1,0 +1,111 @@
+@use "../../responsive.scss" as *;
+
+.landingContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  .bgOpacity {
+    display: flex;
+    position: fixed;
+    background-color: black;
+    opacity: 70%;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .videoContainer {
+    display: flex;
+    position: absolute;
+    z-index: -2;
+
+    video {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 0;
+    font-family: Manrope;
+
+    @include sm {
+      gap: 2px 0;
+    }
+
+    span {
+      display: flex;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+
+    h1 {
+      display: flex;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 58px;
+      letter-spacing: -0.5%;
+      text-align: center;
+      gap: 0 10px;
+
+      @include md {
+        font-size: 32px;
+      }
+
+      @include sm {
+        font-size: 22px;
+        font-weight: 500;
+        gap: 0 5px;
+      }
+
+      span {
+        font-weight: 300;
+        font-size: 48px;
+        line-height: 58px;
+        letter-spacing: -0.5%;
+        text-align: center;
+        color: rgba(92, 214, 255, 1);
+
+        @include md {
+          font-size: 38px;
+        }
+
+        @include sm {
+          font-weight: 300;
+          font-size: 28px;
+        }
+      }
+    }
+
+    h2 {
+      display: flex;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 18px;
+      letter-spacing: -0.5%;
+      text-align: center;
+
+      @include md {
+        font-size: 38px;
+      }
+
+      @include sm {
+        font-weight: 500;
+        font-size: 22px;
+      }
+    }
+  }
+}
