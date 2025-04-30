@@ -7,10 +7,9 @@ type SmallScreenProps = {
     image: string;
     video: string;
   }[];
-  vehiclePartHandler: (video: string) => void;
 };
 
-const SmallScreen = ({ vehicleParts }: SmallScreenProps) => {
+const SmallScreen: React.FC<SmallScreenProps> = ({ vehicleParts }) => {
   const [vehiclePartVideo, setVehiclePartVideo] = useState<string>(
     vehicleParts[0]?.video
   );

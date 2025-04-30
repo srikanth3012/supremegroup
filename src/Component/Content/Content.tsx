@@ -4,11 +4,6 @@ import "./Content.scss";
 import SmallScreen from "./smallScreen/SmallScreen";
 
 // Define a type for vehicle
-interface Vehicle {
-  id: number;
-  title: string;
-  description: string;
-}
 
 interface SelectedVehicle {
   title: string;
@@ -21,26 +16,12 @@ interface VehicleParts {
   image: string;
   video: string;
 }
-
-interface TruckParts {
+interface Vehicle {
   id: number;
   title: string;
-  image: string;
-  video: string;
+  description: string;
+  parts: VehicleParts[];
 }
-
-const vehicles: Vehicle[] = [
-  {
-    id: 1,
-    title: "Passenger vehicles",
-    description: "Revving up innovation from interior to exterior",
-  },
-  {
-    id: 2,
-    title: "Commercial vehicles",
-    description: "Advancing engineering for heavy-duty vehicles",
-  },
-];
 
 const vehicleParts: VehicleParts[] = [
   {
@@ -73,7 +54,7 @@ const vehicleParts: VehicleParts[] = [
   },
 ];
 
-const truck: TruckParts[] = [
+const truck: VehicleParts[] = [
   {
     id: 6,
     title: "Complete Body",
@@ -97,6 +78,21 @@ const truck: TruckParts[] = [
       "https://supreme-group.vercel.app/static/media/commercial-cabin.7981ee5cadcf17dbe57012daa413c584.svg",
     video:
       "https://supreme-group.vercel.app/static/media/Commercial-Cabin.69adf15a8021267cbe8c.mp4",
+  },
+];
+
+const vehicles: Vehicle[] = [
+  {
+    id: 1,
+    title: "Passenger vehicles",
+    description: "Revving up innovation from interior to exterior",
+    parts: [...vehicleParts],
+  },
+  {
+    id: 2,
+    title: "Commercial vehicles",
+    description: "Advancing engineering for heavy-duty vehicles",
+    parts: [...truck],
   },
 ];
 
@@ -176,11 +172,7 @@ const Content: React.FC = () => {
                   <h1 className="title">{item?.title}</h1>
                   <p>{item?.description}</p>
                 </div>
-                {item?.title === "Passenger vehicles" ? (
-                  <SmallScreen vehicleParts={vehicleParts} />
-                ) : (
-                  <SmallScreen vehicleParts={truck} />
-                )}
+                <SmallScreen vehicleParts={item.parts} />
               </React.Fragment>
             ))}
           </div>
